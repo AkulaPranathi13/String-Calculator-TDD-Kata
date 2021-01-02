@@ -29,7 +29,7 @@ class StringCalculatorTests {
 	@Test
 	public void Add_stringWithTwoIntegers() {
 		StringCalculator cal = makeCal();
-		int res = cal.Add("1,2");
+		int res = cal.Add("1,2,");
 		assertEquals(3, res);
 	}
 }
