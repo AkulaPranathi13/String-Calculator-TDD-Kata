@@ -32,11 +32,11 @@ class StringCalculatorTests {
 		int res = cal.Add("1,2,");
 		assertEquals(3, res);
 	}
-	
+
 	@Test
 	public void Add_stringWithMultipleIntegers() {
 		StringCalculator cal = makeCal();
-		int res = cal.Add("1,2,3,4,5");
-		assertEquals(15, res);
+		int res = cal.Add("1,2,3,4");
+		assertEquals(10, res);
 	}
 }
