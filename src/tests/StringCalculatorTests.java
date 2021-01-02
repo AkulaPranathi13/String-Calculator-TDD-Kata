@@ -96,5 +96,12 @@ class StringCalculatorTests {
 		int res = cal.Add("//[*][%]\n1*2%3");
 		assertEquals(6, res);
 	}
+	
+	@Test
+	public void Add_stringWithMultipleDelimitersOfDifferentLengths() {
+		StringCalculator cal = makeCal();
+		int res = cal.Add("//[***][%%][,]\n1***2%%3,4");
+		assertEquals(10, res);
+	}
 
 }
