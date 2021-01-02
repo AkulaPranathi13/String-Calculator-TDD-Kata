@@ -61,10 +61,10 @@ class StringCalculatorTests {
 			cal.Add("-1,-2,3");
 			fail("Expected Exception");
 		} catch (ArithmeticException e) {
-			//exception
+			// exception
 		}
 	}
-	
+
 	@Test
 	public void Add_stringWithnNegativeNumbers_showsExceptionMessage() {
 		StringCalculator cal = makeCal();
@@ -75,7 +75,7 @@ class StringCalculatorTests {
 			assertEquals("Negatives not allowed: [-1, -2, -3]", e.getMessage());
 		}
 	}
-	
+
 	@Test
 	public void Add_stringWithNumbersGreaterThan1000() {
 		StringCalculator cal = makeCal();
@@ -83,4 +83,11 @@ class StringCalculatorTests {
 		assertEquals(3, res);
 	}
 	
+	@Test
+	public void Add_stringWithDelimiterOfAnyLength() {
+		StringCalculator cal = makeCal();
+		int res = cal.Add("//[***]\n1***2***3***1000");
+		assertEquals(6, res);
+	}
+
 }

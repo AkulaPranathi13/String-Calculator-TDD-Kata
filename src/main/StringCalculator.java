@@ -46,11 +46,15 @@ public class StringCalculator {
 		if (numbers.length() == 0)
 			return 0;
 		else {
-			char d = ',';
+			String d = ",";
 			int[] values;
 			if (numbers.startsWith("//")) {
-				d = numbers.charAt(2);
-				numbers = numbers.substring(3, numbers.length());
+				int n = numbers.indexOf("\n");
+				d = numbers.substring(2, n);
+				numbers = numbers.substring(d.length() + 3, numbers.length());
+				if (d.charAt(0) == '[') {
+					d = d.substring(1, d.length() - 1);
+				}
 			}
 			String[] nums = numbers.split("[" + d + " \n]+");
 			values = convert(nums);
