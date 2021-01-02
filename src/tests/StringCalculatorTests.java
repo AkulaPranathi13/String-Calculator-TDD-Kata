@@ -27,7 +27,7 @@ class StringCalculatorTests {
 	}
 
 	@Test
-	public void add_twoElements_addsString() {
+	public void Add_stringWithTwoIntegers() {
 		StringCalculator cal = makeCal();
 		int res = cal.Add("1,2");
 		assertEquals(3, res);
