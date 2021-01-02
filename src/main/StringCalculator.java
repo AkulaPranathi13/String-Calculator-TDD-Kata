@@ -10,6 +10,7 @@ public class StringCalculator {
 		}
 		return values;
 	}
+
 	public int addValues(int[] values) {
 		int sum = 0;
 		for (int i = 0; i < values.length; i++) {
@@ -18,6 +19,7 @@ public class StringCalculator {
 		}
 		return sum;
 	}
+
 	public int Add(String numbers) {
 		numbers = numbers.trim();
 		if (numbers.length() == 0)
@@ -29,9 +31,10 @@ public class StringCalculator {
 				d = numbers.charAt(2);
 				numbers = numbers.substring(3, numbers.length());
 			}
-				String[] nums = numbers.split("[" + d + " ,\n]+");
-				values = convert(nums);
-				return addValues(values);
-			}
+			String[] nums = numbers.split("[" + d + " \n]+");
+			values = convert(nums);
+			return addValues(values);
+		}
 	}
+
 }
