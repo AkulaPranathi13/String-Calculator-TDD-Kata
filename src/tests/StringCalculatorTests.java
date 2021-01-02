@@ -76,4 +76,11 @@ class StringCalculatorTests {
 		}
 	}
 	
+	@Test
+	public void Add_stringWithNumbersGreaterThan1000() {
+		StringCalculator cal = makeCal();
+		int res = cal.Add("1,2,1000");
+		assertEquals(3, res);
+	}
+	
 }
