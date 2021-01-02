@@ -6,6 +6,9 @@ public class StringCalculator {
 		for (int i = 0; i < nums.length; i++) {
 			if (nums[i].length() > 0) {
 				values[i] = Integer.parseInt(nums[i]);
+				if (values[i] < 0) {
+					throw new ArithmeticException();
+				}
 			}
 		}
 		return values;
@@ -18,6 +21,15 @@ public class StringCalculator {
 				sum += values[i];
 		}
 		return sum;
+	}
+
+	public boolean checkForNegativeValues(int[] values) {
+		for (int i = 0; i < values.length; i++) {
+			if (values[i] < 0) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	public int Add(String numbers) {
