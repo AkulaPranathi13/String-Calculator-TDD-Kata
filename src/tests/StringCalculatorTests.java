@@ -53,4 +53,15 @@ class StringCalculatorTests {
 		int res = cal.Add("//;\n1\n;2");
 		assertEquals(3, res);
 	}
+	
+	@Test
+	public void Add_stringWithnNegativeNumbers() {
+		StringCalculator cal = makeCal();
+		try {
+			cal.Add("-1,-2,3");
+			fail("Expected Exception");
+		} catch (ArithmeticException e) {
+			assertEquals("Negatives not allowed: [-1, -2]", e.getMessage());
+		}
+	}
 }
