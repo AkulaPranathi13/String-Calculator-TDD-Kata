@@ -17,7 +17,7 @@ public class StringCalculator {
 	public int addValues(int[] values) {
 		int sum = 0;
 		for (int i = 0; i < values.length; i++) {
-			if (values[i] > 0)
+			if (values[i] < 1000)
 				sum += values[i];
 		}
 		return sum;
