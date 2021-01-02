@@ -50,7 +50,7 @@ class StringCalculatorTests {
 	@Test
 	public void Add_stringWithDifferentDelimiters() {
 		StringCalculator cal = makeCal();
-		int res = cal.Add("//;1\n;2");
-		assertEquals(6, res);
+		int res = cal.Add("//;\n1\n;2");
+		assertEquals(3, res);
 	}
 }

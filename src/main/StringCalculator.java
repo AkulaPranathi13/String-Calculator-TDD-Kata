@@ -1,21 +1,37 @@
 package main;
 
 public class StringCalculator {
-
+	public int[] convert(String[] nums) {
+		int[] values = new int[nums.length];
+		for (int i = 0; i < nums.length; i++) {
+			if (nums[i].length() > 0) {
+				values[i] = Integer.parseInt(nums[i]);
+			}
+		}
+		return values;
+	}
+	public int addValues(int[] values) {
+		int sum = 0;
+		for (int i = 0; i < values.length; i++) {
+			if (values[i] > 0)
+				sum += values[i];
+		}
+		return sum;
+	}
 	public int Add(String numbers) {
 		numbers = numbers.trim();
-		if (numbers.isEmpty())
+		if (numbers.length() == 0)
 			return 0;
-		else if (numbers.length() == 1)
-			return Integer.parseInt(numbers);
 		else {
-			String[] nums = numbers.split("[ ,\n]+");
-			int sum = 0;
-			for (int i = 0; i < nums.length; i++) {
-				sum += Integer.parseInt(nums[i]);
+			char d = ',';
+			int[] values;
+			if (numbers.startsWith("//")) {
+				d = numbers.charAt(2);
+				numbers = numbers.substring(3, numbers.length());
 			}
-			return sum;
-		}
-
+				String[] nums = numbers.split("[" + d + " ,\n]+");
+				values = convert(nums);
+				return addValues(values);
+			}
 	}
 }
