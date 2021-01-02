@@ -39,4 +39,11 @@ class StringCalculatorTests {
 		int res = cal.Add("1,2,3,4");
 		assertEquals(10, res);
 	}
+	
+	@Test
+	public void Add_stringWithNewLineDelimiter() {
+		StringCalculator cal = makeCal();
+		int res = cal.Add("1\n,2,3");
+		assertEquals(6, res);
+	}
 }
