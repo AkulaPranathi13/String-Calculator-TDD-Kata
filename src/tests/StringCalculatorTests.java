@@ -46,4 +46,11 @@ class StringCalculatorTests {
 		int res = cal.Add("1\n,2,3");
 		assertEquals(6, res);
 	}
+	
+	@Test
+	public void Add_stringWithDifferentDelimiters() {
+		StringCalculator cal = makeCal();
+		int res = cal.Add("//;1\n;2");
+		assertEquals(6, res);
+	}
 }
